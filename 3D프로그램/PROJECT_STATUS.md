@@ -55,3 +55,10 @@
 ## 단일 HTML 미리보기 추가
 
 `index.html`은 CSS/스크립트/중립 샘플 이모지를 포함한 단일 파일 화면 미리보기. `index-preview.zip`을 풀어 index.html을 열면 된다. 실제 AI 생성·서버 저장은 연결되지 않으며 완성 앱으로 안내하지 않는다. Chromium에서 외부 리소스 없이 화면 로딩·설정창 열기·JavaScript 오류 없음 확인.
+
+## 연결 시작 파일 / 무료 Colab 실행 초안
+
+- `index.html`은 이제 ZIP의 `ui/index.html`로 연결하는 시작 파일이며, 서버 주소 입력란도 제공. 이전 단일 파일 미리보기는 `preview.html`로 보존.
+- `EmojiStudio-Linked.zip`에 UI·소스·중립 샘플·Colab 노트북을 함께 넣는 빌더 추가. 개인 사진/영상/연결 코드는 제외.
+- `cloud/colab_launch.py`는 무료 GPU 모델 환경 설치 후 별도 Node 웹 서버와 GPU 작업 서버를 실행하고, 검증한 cloudflared 다운로드로 인증된 웹 주소를 표시. 코드가 작성된 것이며 **실제 Colab/GPU 구동은 아직 미검증**.
+- 사용자의 Google 로그인·무료 GPU 배정·Drive 동의가 필요하며 에이전트가 대신 할 수 없음. Node의 SIHU_DATA_DIR를 개인 Drive로 지정해 완료 파일 보존을 준비하지만, 세션 종료/재개 전체 검증은 미완료.

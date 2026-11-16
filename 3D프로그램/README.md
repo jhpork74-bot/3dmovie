@@ -20,7 +20,7 @@ npm test
 
 웹 서버는 `SIHU_SESSION_TOKEN`에 본인 세션의 무작위 연결 코드(24자 이상)를 안전하게 설정한 후 `npm start`로 실행합니다. 코드 값을 공개 소스나 INI에 넣지 마세요. Node 서버는 기본적으로 127.0.0.1:3000에 바인딩되며, 실제 서비스에서는 본인 인증이 적용된 HTTPS 연결이 필요합니다. 저장 경로는 `SIHU_DATA_DIR`로 지정합니다.
 
-무료 GPU 모델 서버는 같은 머신의 127.0.0.1:7860을 사용하며 별도 인증 코드를 적용합니다. `cloud/server.py`와 `cloud/bootstrap.py`는 작성되어 있으나 실제 무료 Colab GPU 실행과 영구 Drive 복구는 아직 검증 전입니다. 완성된 사용자용 노트북도 남은 작업입니다. 유료 API로 자동 전환하지 않습니다.
+무료 GPU 모델 서버는 같은 머신의 127.0.0.1:7860을 사용하며 별도 인증 코드를 적용합니다. `cloud/server.py`와 `cloud/bootstrap.py`는 작성되어 있으나 실제 무료 Colab GPU 실행과 영구 Drive 복구는 아직 검증 전입니다. 실행용 Colab 노트북 초안을 제공하며, 실제 GPU 실행 검증은 남아 있습니다. 유료 API로 자동 전환하지 않습니다.
 
 TTS의 한국어 모델은 원본 sherpa-onnx 릴리스의 `vits-mimic3-ko_KO-kss_low.tar.bz2`를 받아 `vendor/korean`에 풀어야 합니다. 모델과 FFmpeg 바이너리는 이 소스 저장소에 포함하지 않습니다. 출처/라이선스는 THIRD_PARTY.md에 기록합니다. Linux에서는 native module 디렉터리를 LD_LIBRARY_PATH에 포함해야 합니다.
 
@@ -37,3 +37,9 @@ TTS의 한국어 모델은 원본 sherpa-onnx 릴리스의 `vits-mimic3-ko_KO-ks
 ## 화면만 바로 보기
 
 [index-preview.zip](index-preview.zip)을 내려받아 압축을 풀고 `index.html`을 브라우저로 엽니다. CSS/JS 파일을 따로 받을 필요가 없는 **화면 미리보기용**입니다. AI 생성과 서버 저장은 동작하지 않습니다. 실제 웹 앱 진입 화면은 `ui/index.html`이며 웹 서버가 필요합니다.
+
+## 시작 파일과 연결된 ZIP
+
+`EmojiStudio-Linked.zip`을 **전부 압축 해제**한 뒤 최상위 `index.html`을 여세요. 이 시작 파일은 같은 ZIP의 `ui/index.html` 편집기와 연결됩니다. 별도의 `preview.html`은 서버 없는 단일 파일 화면 미리보기입니다. ZIP 내부에서 HTML 하나만 꺼내지 마세요.
+
+AI 서버는 `EmojiStudio-Free-Cloud.ipynb`를 Google Colab에 업로드해 실행해야 합니다. Google 로그인, 무료 GPU 배정, 개인 Drive 연결 동의는 사용자가 진행합니다. 나머지 설치·서버 시작·연결 주소 표시는 노트북에 묶었습니다. 마지막 출력 주소를 시작 파일의 AI 서버 연결 칸에 넣으면 됩니다. 무료 GPU 확보나 설치 성공·AI 품질은 아직 실기기 검증하지 않았으며 보장할 수 없습니다. 사진 대본·음성 자동 자막·감정 렌더링 등 미완료 기능은 PROJECT_STATUS.md를 확인하세요.
