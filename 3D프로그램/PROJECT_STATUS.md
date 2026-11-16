@@ -62,3 +62,5 @@
 - `EmojiStudio-Linked.zip`에 UI·소스·중립 샘플·Colab 노트북을 함께 넣는 빌더 추가. 개인 사진/영상/연결 코드는 제외.
 - `cloud/colab_launch.py`는 무료 GPU 모델 환경 설치 후 별도 Node 웹 서버와 GPU 작업 서버를 실행하고, 검증한 cloudflared 다운로드로 인증된 웹 주소를 표시. 코드가 작성된 것이며 **실제 Colab/GPU 구동은 아직 미검증**.
 - 사용자의 Google 로그인·무료 GPU 배정·Drive 동의가 필요하며 에이전트가 대신 할 수 없음. Node의 SIHU_DATA_DIR를 개인 Drive로 지정해 완료 파일 보존을 준비하지만, 세션 종료/재개 전체 검증은 미완료.
+
+연결 패키지 검사: ZIP 무결성, 11개 필수 파일, Colab 코드 셀 4개의 문법 확인. 압축 해제본 index → ui/index 이동과 CSS/JS 6개 로드 및 JavaScript 오류 없음 확인. 이 UI 연결 검사에서는 백엔드 설정 응답을 모의 제공했으며 실제 무료 GPU는 검증하지 않음.
