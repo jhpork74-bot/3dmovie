@@ -51,3 +51,7 @@
 - test/: 단위·Chromium·웹 브리지 검사
 
 초기 desktop main.js/preload.js/Launch.cmd는 전환 전 코드이며 현재 최종 배포 목표가 아님.
+
+## 단일 HTML 미리보기 추가
+
+`index.html`은 CSS/스크립트/중립 샘플 이모지를 포함한 단일 파일 화면 미리보기. `index-preview.zip`을 풀어 index.html을 열면 된다. 실제 AI 생성·서버 저장은 연결되지 않으며 완성 앱으로 안내하지 않는다. Chromium에서 외부 리소스 없이 화면 로딩·설정창 열기·JavaScript 오류 없음 확인.
