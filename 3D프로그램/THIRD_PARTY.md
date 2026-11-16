@@ -1,0 +1,12 @@
+# Open source components and provenance
+
+This application integrates published engines through their public interfaces. It does not copy another application's proprietary interface or source.
+
+- **sherpa-onnx 1.12.20**: https://github.com/k2-fsa/sherpa-onnx — Apache-2.0. Node wrapper and Windows x64 native modules come from npm with registry integrity metadata. The Korean TTS model archive is `vits-mimic3-ko_KO-kss_low.tar.bz2` in the upstream `tts-models` release. `vendor/SHERPA-LICENSE.txt` contains the license. Embedded phonemization also involves eSpeak NG (GPL-3.0), whose license is included in `vendor/ESPEAK-LICENSE.txt`.
+- **Korean KSS voice**: https://github.com/MycroftAI/mimic3-voices/tree/master/voices/ko_KO/kss_low — upstream voice LICENSE is CC0-1.0; copied into `vendor/KOREAN-MODEL-LICENSE.txt`. The sherpa archive identifies this source. This is a generic synthetic voice, not a cloned voice of the child.
+- **FFmpeg**: https://github.com/FFmpeg/FFmpeg and https://github.com/FFmpeg-Builds/FFmpeg-Builds — GPL build, invoked as a separate executable. Windows binary comes from `latest/ffmpeg-master-latest-win64-gpl.zip`, built 2026-11-15. Official release checksum: `13a7002327cffe87be9a050bb8cbfbd8be3acc646fe48d7d9e41d05e16083cf0`. License included in `vendor/FFMPEG-LICENSE.txt`. Upstream source/build scripts and dependency recipes: https://github.com/FFmpeg-Builds/FFmpeg-Builds/tree/master and https://github.com/FFmpeg/FFmpeg. Build provenance is recorded in `vendor/provenance.json`; preserve this information when redistributing the separate FFmpeg executable and comply with its corresponding-source obligations.
+- **Electron 45.3.3**: https://github.com/electron/electron — MIT with bundled Chromium and other component licenses. Official release ZIP is verified against release `SHASUMS256.txt`. Electron `LICENSE` and `LICENSES.chromium.html` are retained in the portable application directory.
+- **pngjs 7.0.0**: https://github.com/pngjs/pngjs — MIT; package license included in node_modules.
+- **Microsoft Visual C++ Runtime**: not bundled. The first-run launcher downloads only from Microsoft's official HTTPS distribution, validates its Authenticode signature and Microsoft publisher, and invokes the original installer when the runtime is missing. Its own Microsoft terms apply.
+
+The avatar images are generated from the user's supplied reference. The included background video is user-provided. Do not treat these personal assets as generic open source sample content.

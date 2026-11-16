@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+ <defs><radialGradient id="skin" cx="35%" cy="25%" r="75%"><stop stop-color="#ffe798"/><stop offset=".65" stop-color="#ffca57"/><stop offset="1" stop-color="#dd8e29"/></radialGradient><radialGradient id="shirt"><stop stop-color="#8bd5ff"/><stop offset="1" stop-color="#3d7db5"/></radialGradient></defs>
+ <path d="M140 700c0-130 90-185 220-185s220 55 220 185z" fill="url(#shirt)"/>
+ <circle cx="360" cy="310" r="225" fill="url(#skin)"/>
+ <ellipse cx="282" cy="285" rx="24" ry="35" fill="#3a2a24"/><ellipse cx="438" cy="285" rx="24" ry="35" fill="#3a2a24"/>
+ <ellipse cx="275" cy="272" rx="7" ry="11" fill="white"/><ellipse cx="431" cy="272" rx="7" ry="11" fill="white"/>
+ <path d="M280 393q80 100 160 0q-80 38-160 0" fill="#663123"/><path d="M293 400q67 28 134 0q-67 49-134 0" fill="white"/>
+ <ellipse cx="235" cy="365" rx="31" ry="17" fill="#ee9960" opacity=".5"/><ellipse cx="485" cy="365" rx="31" ry="17" fill="#ee9960" opacity=".5"/>
+</svg>

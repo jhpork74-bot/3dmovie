@@ -1,0 +1,13 @@
+node_modules/
+vendor/
+output/
+dist/
+.env
+.env.*
+settings.ini
+settings.json
+*.bin
+__pycache__/
+*.pyc
+assets/*.png
+assets/*.mp4

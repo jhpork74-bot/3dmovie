@@ -1,0 +1,7 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');
+const {options,keyframes,interpolate,expression,envelope,koreanNumbers}=require('../engine');
+test('empty and overlong scripts are rejected before native TTS',()=>{assert.throws(()=>options({text:' '}));assert.throws(()=>options({text:'가'.repeat(3001)}));});
+test('export inputs cannot inject arbitrary encoder or filter syntax',()=>{const o=options({text:'안녕',codec:'x;evil',voiceSpeed:99,pitch:-1,preset:'__proto__',position:'evil',videoSpeed:0});assert.equal(o.codec,'h264');assert.equal(o.preset,'youtube');assert.equal(o.voiceSpeed,2);assert.equal(o.pitch,0);assert.equal(o.position,'br');assert.equal(o.videoSpeed,.25);});
+test('timeline keyframes are sorted, deduplicated, clamped and interpolated',()=>{const k=keyframes([{time:2,zoom:5,x:200,y:50},{time:0,zoom:1,x:50,y:50},{time:2,zoom:2,x:80,y:50}]);assert.equal(k.length,2);assert.equal(interpolate(k,1,'zoom',1),1.5);assert.equal(interpolate(k,99,'zoom',1),2);assert.equal(interpolate(k,-1,'zoom',1),1);assert.match(expression(k,'zoom',1),/on\/30/);});
+test('silence closes the mouth and speech opens it',()=>{const samples=new Float32Array(24000);samples.fill(.2,8000,16000);const e=envelope(samples,24000);assert.equal(e[0],0);assert.ok(e[15]>.8);assert.equal(e.at(-1),0);});
+test('phone digits are pronounced individually without external requests',()=>{assert.equal(koreanNumbers('전화 010-1234-5678'),'전화 영일영, 일이삼사, 오육칠팔');});

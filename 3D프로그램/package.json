@@ -1,0 +1,31 @@
+{
+  "name": "emoji-studio",
+  "version": "0.2.0-dev",
+  "description": "Modular web production studio for dialogue, emoji, photos, captions and video",
+  "author": "3dmovie",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "node web-server.js",
+    "test": "node --test test/*.test.js",
+    "smoke": "node scripts/smoke.js",
+    "desktop:legacy": "electron .",
+    "pretest": "node scripts/ensure-assets.js",
+    "prestart": "node scripts/ensure-assets.js"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "busboy": "1.6.0",
+    "express": "5.1.0",
+    "pngjs": "7.0.0",
+    "sherpa-onnx-node": "1.12.20"
+  },
+  "devDependencies": {
+    "electron": "45.3.3",
+    "playwright-core": "^1.58.2"
+  },
+  "optionalDependencies": {
+    "sherpa-onnx-linux-x64": "1.12.20",
+    "sherpa-onnx-win-x64": "1.12.20"
+  }
+}
